@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chemistry 12th Chapter 7 - Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background: linear-gradient(135deg,#f6fafd 0%,#e9f0ff 100%);
+  font-family: 'Segoe UI',Arial,sans-serif; color: #232b36;
+  margin:0; padding:0;
+}
+.container {
+  max-width:900px; margin:30px auto; background:#fff;
+  border-radius:12px; box-shadow:0 4px 22px rgba(160,188,250,0.15),0 1px 6px rgba(80,120,200,.07);
+  padding:36px 24px 28px 24px;
+}
+h1 {
+  color:#234ba5; font-size: 2.1em; margin-bottom:18px;
+  text-align:center; font-weight:600; letter-spacing:.5px;
+}
+h2 {
+  color:#2965bc; border-left:7px solid #4da9dc;
+  padding-left:10px; font-size:1.25em; margin:32px 0 12px 0;
+}
+h3 { color:#476baa; margin:18px 0 7px 0; font-size:1.09em}
+ul {margin-left:22px;}
+li {margin:5px 0;}
+.table {width:100%;margin:17px 0 24px 0;border-collapse:collapse;font-size:15px;}
+.table th,.table td {padding:7px 9px;border:1px solid #dae8f6;text-align:center;}
+.table th {background:#e5f3ff;color:#184773;}
+.note {
+  background:#fffbe6;border-left:4px solid #ffb338;
+  margin:12px 0; padding:7px 13px;border-radius:4px;color:#634711;
+}
+.dbox {
+  background: #eff3fa; display:grid; grid-template-columns:1fr 1fr;
+  gap:16px;padding:10px 16px 10px 11px;border-radius:8px; margin-top:12px
+}
+@media (max-width:650px){
+  .container{padding:9px 6px;}
+  .dbox{grid-template-columns:1fr;}
+  h1{font-size:1.18em;}
+}
+.hl {background:#d2eaff;color:#122647;padding:1px 6px;border-radius:4px;font-weight:500}
+:root {
+  --bg-color: #f6fafd;
+  --header-bg: #dbeafe;
+  --text-color: #232b36;
+  --box-bg: #fff;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: var(--header-bg);
+  padding: 20px 28px 12px 28px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 12px rgba(52,112,195,0.08);
+}
+.main-title {
+  margin: 0;
+  font-size: 1.5em;
+  color: #234ba5;
+  letter-spacing: 0.5px;
+}
+#theme-toggle {
+  font-size: 1em;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#theme-toggle:hover { background: #1e40af; }
+
+body.dark {
+  --bg-color: #171e28;
+  --header-bg: #29334a;
+  --text-color: #f6fafd;
+  --box-bg: #262e44;
+}
+.container {
+  background: var(--box-bg);
+  /* (rest of your existing .container styles) */
+}
+
+</style>
+
+</head>
+<body>
+    <header class="app-header">
+  <button id="theme-toggle" aria-label="Switch theme">
+    🌙 Dark Mode
+  </button>
+</header>
+
+<div class="container">
+<h1>Group 16, 17 &amp; 18 Elements – Concise Revision Notes</h1>
+
+<h2>7.1 Introduction</h2>
+<ul>
+<li>p-block: Last electron enters p-orbital; includes Groups 13–18.</li>
+<li>This chapter focuses on Groups 16 (Oxygen fam.), 17 (Halogens), 18 (Noble Gases).</li>
+</ul>
+
+<h2>7.2 Occurrence</h2>
+<ul>
+<li><span class="hl">Group 16</span>: O, S, Se, Te, Po. O is most abundant (20.95% air by vol, 46.6% crust by mass). S mainly as sulfates (gypsum, baryte) & sulfides (galena, ZnS, CuFeS2).</li>
+<li>Se, Te: In selenides/tellurides in ores. Po is rare & radioactive.</li>
+<li><span class="hl">Group 17</span>: F, Cl, Br, I, At. Never free, always as salts (e.g., F as CaF2, Na3AlF6). Sea water contains Cl, Br, I (mainly NaCl 2.5% mass). Astatine: radioactive, short-lived.</li>
+<li><span class="hl">Group 18</span>: He, Ne, Ar, Kr, Xe, Rn. Mostly in air (argon most), He from natural gas. Rn: decay product; rare.</li>
+</ul>
+
+<h2>7.3 Electronic Configuration</h2>
+<ul>
+<li>Group 16: ns<sup>2</sup>np<sup>4</sup> (2e<sup>−</sup> less than noble gas); Ex: O=[He]2s<sup>2</sup>2p<sup>4</sup></li>
+<li>Group 17: ns<sup>2</sup>np<sup>5</sup> (1e<sup>−</sup> less)</li>
+<li>Group 18: ns<sup>2</sup>np<sup>6</sup> (noble gas: closed shell)</li>
+</ul>
+<table class="table">
+  <tr><th>Group</th><th>Element</th><th>Condensed Configuration</th></tr>
+  <tr><td>16</td><td>O, S, Se, Te, Po</td><td>[He]2s<sup>2</sup>2p<sup>4</sup>, [Ne]3s<sup>2</sup>3p<sup>4</sup>, ...</td></tr>
+  <tr><td>17</td><td>F, Cl, Br, I, At</td><td>[He]2s<sup>2</sup>2p<sup>5</sup>, [Ne]3s<sup>2</sup>3p<sup>5</sup>, ...</td></tr>
+  <tr><td>18</td><td>Ne, Ar, Kr, Xe, Rn</td><td>[He]2s<sup>2</sup>2p<sup>6</sup>, [Ne]3s<sup>2</sup>3p<sup>6</sup>, ...</td></tr>
+</table>
+
+<h2>7.4 Atomic &amp; Physical Properties</h2>
+<ul>
+<li>Atomic & Ionic radii ↑ down group (more shells); ↓ across period (higher Z<sub>eff</sub>).</li>
+<li>Ionization enthalpy: High values in all groups; ↓ down group (size ↑); ↑ across period (Z<sub>eff</sub>↑). G16 lower I.E. than G15 due to p<sup>3</sup> vs p<sup>4</sup> stability.</li>
+<li>Electronegativity: ↓ down; O (2nd highest overall). Halogens: very high (F highest).</li>
+<li>Electron Gain Enthalpy: Less negative down group. F has less negative EGE than Cl due to small atomic size.</li>
+</ul>
+<table class="table">
+  <tr><th>Group</th><th>Atomic Radius (pm)</th><th>I.E. (kJ/mol)</th><th>Electronegativity</th></tr>
+  <tr><td>16 (O–Po)</td><td>66 → 146</td><td>1314 → 813</td><td>3.50 → 1.76</td></tr>
+  <tr><td>17 (F–I)</td><td>64 → 133</td><td>1680 → 1008</td><td>4.0 → 2.7</td></tr>
+  <tr><td>18 (He–Xe)</td><td>120 → 220</td><td>2372 → 1170</td><td>–</td></tr>
+</table>
+
+<div class="note">O₂ is diatomic (weak v.d. Waals), S₈ is polyatomic (stronger forces), so O₂ has much lower m.p./b.p. Compared to respective period G15, G16 elements have lower ionization enthalpy due to less stability of np⁴.</div>
+
+<h2>7.4.2 Phys. Properties (Linewise)</h2>
+<ul>
+<li>G16: O (gas), S/Se/Te (solids), Po (radioactive metal). All show allotropy.</li>
+<li>G17: F₂, Cl₂ – gases; Br₂ – liquid; I₂ – solid.</li>
+<li>Bond dissociation enthalpy (F₂ &lt; Cl₂ due to lone pair repulsion).</li>
+<li>G18: Monoatomic, very low m.p./b.p. - weak van der Waals forces.</li>
+</ul>
+
+<h2>7.5 Anomalous Behaviour</h2>
+<ul>
+<li>Oxygen: Diatomic (O₂), paramagnetic, can't show &gt;+2 state (no d-orbitals), H₂O is a liquid (via H-bonding), covalency up to 2 usually. Due to small size, high EN, no d.</li>
+<li>Fluorine: Small size, high EN, no d-orbitals, low FF bond energy (lone pairs), always -1 O.S., forms HOF (only one oxoacid), HF liquid (H-bond), most reactions exothermic.</li>
+</ul>
+
+<h2>7.6 Chemical Properties</h2>
+<h3>Oxidation States</h3>
+<ul>
+<li>G16: O usually -2 (also -1 in peroxides, +2 in OF₂); S/Se/Te: -2, +2,+4,+6; Stability: +6 ↓ down, +4 ↑ (inert pair effect).</li>
+<li>G17: F only -1. Cl/Br/I: -1, +1, +3, +5, +7 (expand octet using d-orbitals)</li>
+<li>G18: Usually 0; Xe (large, lower I.E.) forms +2 (XeF₂), +4 (XeF₄), +6 (XeF₆, XeO₃), +8 (XeO₄, theoretical).</li>
+</ul>
+
+<h3>Reactivity with Hydrogen</h3>
+<ul>
+<li>G16: Form H₂E (O, S, Se, Te, Po). H₂O – liquid; others – bad-smelling, poisonous gases. Acidity ↑ and thermal stability ↓ down group.</li>
+<li>G17: Form HX. Acid strength: HF &lt; HCl &lt; HBr &lt; HI; due to H-X bond energy decreasing down group. All (except HF) are gases.</li>
+</ul>
+<table class="table">
+<tr><th></th><th>H₂O</th><th>H₂S</th><th>H₂Se</th><th>H₂Te</th></tr>
+<tr><td>m.p. (K)</td><td>273</td><td>188</td><td>208</td><td>222</td></tr>
+<tr><td>b.p. (K)</td><td>373</td><td>213</td><td>232</td><td>269</td></tr>
+<tr><td>pKa</td><td>14.0</td><td>7.0</td><td>3.8</td><td>2.6</td></tr>
+</table>
+
+<h3>With Oxygen</h3>
+<ul>
+<li>G16: EO₂, EO₃ – acidic oxides, react with water to form acids. SO₂ is reducing, TeO₂ is oxidizing. Higher oxidation state oxides more covalent.</li>
+<li>G17: Many halogen oxides – mostly unstable, strong oxidizers (OF₂, Cl₂O, ClO₂, etc.)</li>
+<li>G18: Inert, but Xe forms oxides/oxyfluorides (XeO₃, XeOF₄).</li>
+</ul>
+
+<h3>With Halogens</h3>
+<ul>
+<li>G16: Halides SF₆, SeF₆, TeF₆ (octahedral), SF₄, SeF₄, TeCl₄ (trigonal bipyramidal), SCl₂, SeCl₂ (tetrahedral).</li>
+<li>G17: Form interhalogen compounds XX', XX'₃, XX'₅, XX'₇ (see section 7.12).</li>
+<li>G18: Xe/Kr react with F₂ to give fluorides: XeF₂, XeF₄, XeF₆.</li>
+</ul>
+
+<h2>7.7 Allotropy</h2>
+<ul>
+<li>G16: O₂ and O₃ (ozone) are allotropes of O. S shows several: α-S (rhombic), β-S (monoclinic); S₂ at ~1000K is paramagnetic. Se: red (nonmetallic), grey (metallic, photoconductor).</li>
+</ul>
+<div class="dbox">
+<div>
+<b>Rhombic S</b>
+<ul>
+<li>Pale yellow, orthorhombic, stable &lt;369K</li>
+<li>2.069g/cm³, soluble in CS₂</li>
+</ul>
+</div>
+<div>
+<b>Monoclinic S</b>
+<ul>
+<li>Bright yellow, needle-like, stable &gt;369K</li>
+<li>1.989g/cm³, soluble in CS₂</li>
+</ul>
+</div>
+</div>
+
+<h2>7.8 Oxoacids</h2>
+<h3>7.8.1 Sulfur Oxoacids</h3>
+<ul>
+<li>H₂SO₃ (Sulfurous), H₂SO₄ (Sulfuric), H₂S₂O₇ (Pyrosulfuric), H₂SO₅ (Caro’s), H₂S₂O₈ (Peroxydisulfuric), H₂S₂O₃ (Thiosulfuric). Structures: S = central, attached O/H as per acid.</li>
+</ul>
+<h3>7.8.2 Halogen Oxoacids</h3>
+<ul>
+<li>General types: +1 (HOX), +3 (HOXO), +5 (HOXO₂), +7 (HOXO₃). Only HOF, HClO₄, HIO₃, H₂IO₆ are isolated; rest exist in solution/salt.</li>
+<li>Acid strength ↑ with oxidation state.</li>
+</ul>
+<table class="table">
+<tr><th>X</th><th>+1</th><th>+3</th><th>+5</th><th>+7</th></tr>
+<tr><td>Cl</td><td>HOCl</td><td>HClO₂</td><td>HClO₃</td><td>HClO₄</td></tr>
+<tr><td>Br</td><td>HOBr</td><td>–</td><td>HBrO₃</td><td>HBrO₄</td></tr>
+<tr><td>I</td><td>HOI</td><td>–</td><td>HIO₃</td><td>HIO₄</td></tr>
+</table>
+
+<h2>7.9 Oxygen &amp; Compounds</h2>
+<h3>7.9.1 Dioxygen</h3>
+<ul>
+<li>Prep: Heating KClO₃ (MnO₂), Ag₂O, HgO, electrolytic, or fractional distn. of air.</li>
+<li>Properties: O₂ is colorless, odorless, paramagnetic; supports combustion &amp; respiration.</li>
+<li>Chem: Directly reacts with metals (except Au, Pt), nonmetals (except noble gases).</li>
+</ul>
+<h3>7.9.3 Ozone</h3>
+<ul>
+<li>Formed by UV on O₂; pale blue gas, strong oxidizer, absorbs UV (protects earth). Unstable – decomposes exothermically.</li>
+<li>Prep: Silent electric discharge through dry O₂.</li>
+<li>Uses: Air/water purification, bleaching, synthesis, environmental shield.</li>
+<li>Depletion: Caused by NO, CFCs; increases UV on earth.</li>
+</ul>
+
+<h2>7.10 Compounds of Sulfur</h2>
+<h3>7.10.1 Sulfur Dioxide (SO₂)</h3>
+<ul>
+<li>Prep: Burn S, treat Na₂SO₃ with H₂SO₄, roasting ores.</li>
+<li>Physical: Colorless, pungent, poisonous, highly soluble in water.</li>
+<li>Chem: Forms SO₂Cl₂ with Cl₂ (charcoal), SO₃ (V₂O₅), Na₂SO₃ with NaOH. Reduces Fe³⁺→Fe²⁺, bleaches colors.</li>
+<li>Uses: Refining, bleaching, disinfectant, preservative, H₂SO₄ manufacture.</li>
+</ul>
+<h3>7.10.2 Sulfuric Acid (H₂SO₄)</h3>
+<ul>
+<li>Contact Process: S + O₂ → SO₂ (burning/roasting)<br> SO₂ + O₂ (V₂O₅) ↔ SO₃<br> SO₃ + H₂SO₄ → H₂S₂O₇ (oleum), dilute to get H₂SO₄</li>
+<li>Properties: Colorless, oily, dense, highly corrosive.</li>
+<li>Uses: Fertilizers, paints, petroleum, cleaning metals, batteries, nitrocellulose, detergents, lab reagent.</li>
+</ul>
+
+<h2>7.11 Chlorine &amp; Compounds</h2>
+<h3>Chlorine</h3>
+<ul>
+<li>Prep: Oxidize HCl with MnO₂/KMnO₄ or via brine electrolysis.</li>
+<li>Properties: Greenish-yellow, pungent, heavy, dissolves in water. Powerful oxidizer and bleacher.</li>
+<li>Chem: Reacts with metals/nonmetals, H₂, NH₃ (NH₄Cl/NCl₃), alkalis (NaOCl), hydrocarbons (substitution/addition), oxidizes SO₂/Fe²⁺.</li>
+<li>Uses: Water purification, bleaching pulp/textiles, extraction, synthesis, poison gas prep.</li>
+</ul>
+<h3>Hydrogen Chloride (HCl)</h3>
+<ul>
+<li>Prep: NaCl + H₂SO₄ (420K) → HCl.</li>
+<li>Properties: Colorless gas, highly soluble, forms hydrochloric acid (strong acid in water).</li>
+<li>Chem: NH₄Cl formation (with NH₃), dissolves noble metals in aqua regia.</li>
+</ul>
+
+<h2>7.12 Interhalogen Compounds</h2>
+<ul>
+<li>Formed by two different halogens: types—XX', XX'₃, XX'₅, XX'₇ (e.g., ClF, ClF₃, IF₅, IF₇).</li>
+<li>(X = larger, more electropositive; X' = smaller, more electronegative)</li>
+<li>Generally more reactive than X₂; have even atom count, central halogen has odd number of attached X'.</li>
+<li>Examples, properties, states at 25°C, stability: ClF (gas), BrF₃ (liq), IF₇ (gas). Thermal stability: ClF &gt; ICl &gt; IBr &gt; BrCl &gt; BrF. Hydrolysis can give oxoacids, fluorination uses.</li>
+</ul>
+<table class="table">
+<tr><th>Type</th><th>Formula</th><th>Shape</th></tr>
+<tr><td>XX'</td><td>ClF, BrCl</td><td>Linear</td></tr>
+<tr><td>XX'₃</td><td>ClF₃, IF₃</td><td>T-shaped</td></tr>
+<tr><td>XX'₅</td><td>BrF₅, IF₅</td><td>Square pyramid</td></tr>
+<tr><td>XX'₇</td><td>IF₇</td><td>Pentagonal bipyramid</td></tr>
+</table>
+
+<h2>7.13 Xenon Compounds</h2>
+<ul>
+<li>Xenon forms fluorides (XeF₂, XeF₄, XeF₆) by direct reaction with F₂ (high temp, Ni tube, or electric discharge).</li>
+<li>Undergo hydrolysis to form XeO₃, XeOF₄. Structures: XeF₂ (linear), XeF₄ (square planar), XeF₆ (dist. octahedral).</li>
+<li>Uses: Synthesis of UF₆, lasers. Only heavier noble gases form compounds (lower I.E.).</li>
+</ul>
+
+<h2>7.14 Uses of He, Ne, Ar</h2>
+<table class="table">
+  <tr><th>Element</th><th>Uses</th></tr>
+  <tr><td>He</td><td>Respiration (deep-sea/asthma), balloons (He+H₂), welding (inert gas), research (liquid He), lasers, MRI, fuel tanks pressurization</td></tr>
+  <tr><td>Ne</td><td>Neon signs, voltage/circuit devices, lasers, lighting</td></tr>
+  <tr><td>Ar</td><td>Inert atm. for welding/steel, bulb filling, mixed in lights</td></tr>
+</table>
+
+<h2>Endnotes</h2>
+<div class="note"><b>Remember:</b> Group-wise trends (atomic size, electronegativity, I.E.), anomalous first-member behavior, summary tables for oxoacids/interhalogens, and practice key reactions for exam prep. Use flashcards/checklists for final revision!</div>
+</div>
+<a href="index.html"><button style="align-self: center;"><strong>Go to home</strong></button></a>
+<footer style="text-align: center; padding: 16px; background-color: #eeeeee; margin-top: 40px; font-size: 14px; color: #555;">
+  &copy; 2025 BIT All rights reserved.
+</footer>
+<script>
+const btn = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Remember the theme between visits
+if(localStorage.getItem('theme')==='dark') {
+  body.classList.add('dark');
+  btn.textContent = '☀️ Light Mode';
+}
+
+btn.onclick = function() {
+  body.classList.toggle('dark');
+  if(body.classList.contains('dark')) {
+    btn.textContent = '☀️ Light Mode';
+    localStorage.setItem('theme','dark');
+  } else {
+    btn.textContent = '🌙 Dark Mode';
+    localStorage.setItem('theme','light');
+  }
+};
+</script>
+</body>
+</html>
