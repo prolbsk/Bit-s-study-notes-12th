@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BIT's Chemistry Notes Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-main: #f6f9fc;
+  --header-bg: #e3eaff;
+  --note-bg: #fff;
+  --card-hover-bg: #e8f4ff;
+  --accent: #1367d2;
+  --accent2: #faf8e7;
+  --btn-bg: #1367d2;
+  --btn-hover: #003367;
+  --border-main: #d8e6f8;
+  --text-main: #1d2735;
+}
+body {
+  background: var(--bg-main);
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  color: var(--text-main);
+}
+.header {
+  background: var(--header-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 32px 18px 32px;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 2px 8px rgba(70,100,180,0.10);
+  position: sticky; top: 0; z-index: 2;
+}
+.logo {
+  margin: 0;
+}
+#theme-toggle {
+  font-size: 1.06em;
+  padding: 8px 13px;
+  border-radius: 5px;
+  border: none;
+  background: var(--btn-bg);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.20s;
+}
+#theme-toggle:hover { background: var(--btn-hover); }
+.main {
+  max-width: 1040px;
+  margin: 38px auto 0 auto;
+  padding: 0 12px 42px 12px;
+}
+.hero {
+  margin-top: 20px;
+  background: linear-gradient(95deg, #eaf3ff 0%, #f6f9fc 100%);
+  border-radius: 16px;
+  padding: 36px 20px 27px 20px;
+  text-align: center;
+  box-shadow: 0 3px 18px #dbe6fa3c;
+}
+.hero h2 {
+  margin: 0 0 12px 0;
+  font-size: 2em;
+  color: var(--accent);
+  font-weight: 700;
+}
+.hero p {
+  font-size: 1.18em;
+  color: #2c3e59;
+  margin: 10px auto 0 auto;
+  max-width: 690px;
+}
+.notes-section {
+  margin-top: 38px;
+}
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
+  gap: 28px;
+  margin-top: 23px;
+}
+.note-card {
+  background: var(--note-bg);
+  border-radius: 13px;
+  border: 1.6px solid var(--border-main);
+  box-shadow: 0 2px 12px #e0e9f788;
+  padding: 21px 19px 15px 19px;
+  transition: box-shadow 0.2s,transform 0.13s, background 0.22s;
+  min-height: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.note-card:hover {
+  box-shadow: 0 8px 30px #a6d6ff42;
+  background: var(--card-hover-bg);
+  transform: translateY(-2px) scale(1.012);
+}
+.note-title {
+  font-size: 1.23em;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  margin-bottom: 7px;
+}
+
+.note-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+.note-link, .note-download {
+  text-decoration: none;
+  background: var(--accent2);
+  color: var(--accent);
+  font-size: 1em;
+  padding: 7px 14px;
+  border-radius: 5px;
+  transition: background 0.18s;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+.note-link:hover, .note-download:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.link-edit {
+  position: absolute;
+  top: 13px;
+  right: 12px;
+  font-size: 0.92em;
+  background: #eaf17b;
+  color: #745400;
+  border-radius: 4px;
+  padding: 3px 10px;
+  cursor: pointer;
+  border: none;
+  display: none;
+}
+.note-card[data-owner="bit"]:hover .link-edit {
+  display: inline-block;
+}
+@media (max-width:700px) {
+  .main {padding:0 1vw;}
+  .hero h2 {font-size:1.18em;}
+}
+body.dark {
+  --bg-main: #11141e;
+  --header-bg: #232a3c;
+  --note-bg: #181e29;
+  --card-hover-bg: #1d2449;
+  --accent2: #232b36;
+  --text-main: #f1f7fa;
+  --border-main: #393e4b;
+}
+::-webkit-scrollbar {width:11px; background:#caddf9;}
+::-webkit-scrollbar-thumb {background:#b9d3f2; border-radius:20px;}
+body.dark ::-webkit-scrollbar-thumb {background:#313d59;}
+.iedit {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="logo"><img class="iedit" src="image12.jpg" alt="BIT"></div>
+  <button id="theme-toggle">🌙 Dark Mode</button>
+</header>
+
+<main class="main">
+  <section class="hero">
+    <h2 style="color: #07710b;">You are on the right place for <i><strong>REVISION</strong></i></h2>
+  </section>
+  <section class="notes-section">
+    <h3 style="color:#ee0af6;margin-bottom:19px;">Latest Notes</h3>
+    <div class="notes-grid" id="notes-list">
+
+      <!-- Example Note Card for Group 16, 17, 18 Elements -->
+      <div class="note-card" data-owner="bit">
+        <div class="note-title"><strong>Chapter 7</strong> - Group 16, 17 &amp; 18 Elements – Chemistry Revision</div>
+
+        <div class="note-actions">
+          <a class="note-link" href="chemlesson7.html" target="_blank">View</a>
+          <a class="note-download" href="chemlesson7.html" download>Download</a>
+        </div>
+    </div>
+  </section>
+</main>
+
+
+<script>
+const btn = document.getElementById('theme-toggle');
+const body = document.body;
+if(localStorage.getItem('theme')==='dark') {
+  body.classList.add('dark');
+  btn.textContent = '☀️ Light Mode';
+}
+btn.onclick = function() {
+  body.classList.toggle('dark');
+  if(body.classList.contains('dark')) {
+    btn.textContent = '☀️ Light Mode';
+    localStorage.setItem('theme','dark');
+  } else {
+    btn.textContent = '🌙 Dark Mode';
+    localStorage.setItem('theme','light');
+  }
+};
+</script>
+</body>
+</html>
