@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9: Neurobiology and Endocrinology</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #1a2a6c;
+            border-bottom: 2px solid #b21f1f;
+            padding-bottom: 8px;
+            margin: 25px 0 15px;
+        }
+        
+        h3 {
+            color: #b21f1f;
+            margin: 20px 0 10px;
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #1a2a6c;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #e9ecef;
+        }
+        
+        /* Definition Lists */
+        dl {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 15px 0;
+        }
+        
+        dt {
+            font-weight: bold;
+            color: #1a2a6c;
+            margin-top: 10px;
+        }
+        
+        dd {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        /* Flow Chart Styles */
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 25px 0;
+        }
+        
+        .flow-step {
+            background-color: white;
+            border: 2px solid #1a2a6c;
+            border-radius: 8px;
+            padding: 15px;
+            width: 80%;
+            text-align: center;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .flow-step:not(:last-child)::after {
+            content: "↓";
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #b21f1f;
+        }
+        
+        .flow-step-title {
+            font-weight: bold;
+            color: #b21f1f;
+            margin-bottom: 5px;
+        }
+        
+        /* Brain Diagram Styles */
+        .brain-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+        
+        .brain-section {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .brain-section h4 {
+            color: #1a2a6c;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .brain-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .brain-section li {
+            padding: 5px 0;
+            border-bottom: 1px dotted #ddd;
+        }
+        
+        .brain-section li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Comparison Table Styles */
+        .comparison-table th:first-child {
+            width: 30%;
+        }
+        
+        /* Short Answers Section */
+        .short-answers {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .short-answer {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .short-answer h4 {
+            color: #1a2a6c;
+            margin-bottom: 8px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .brain-container {
+                flex-direction: column;
+            }
+            
+            .short-answers {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lesson 9: Neurobiology and Endocrinology</h1>
+        <p>Complete study guide with tables, diagrams, and explanations</p>
+    </header>
+    
+    <section id="part1">
+        <h2>Part 1: Neuroglial Cells</h2>
+        <h3>Complete the table on Neuroglial Cells</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Cell Type</th>
+                    <th>Function</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>PNS</strong></td>
+                    <td><strong>Schwann Cell</strong></td>
+                    <td>Produces the myelin sheath, which insulates axons and speeds up nerve impulse conduction. Also aids in repair.</td>
+                </tr>
+                <tr>
+                    <td><strong>PNS</strong></td>
+                    <td><strong>Satellite Cells</strong></td>
+                    <td>Support neuronal cell bodies in ganglia (clusters of neurons). Help regulate the chemical environment.</td>
+                </tr>
+                <tr>
+                    <td><strong>CNS</strong></td>
+                    <td><strong>Oligodendrocyte</strong></td>
+                    <td>Produces the myelin sheath that insulates axons in the Central Nervous System.</td>
+                </tr>
+                <tr>
+                    <td><strong>CNS</strong></td>
+                    <td><strong>Microglia</strong></td>
+                    <td>Phagocytic cells that act as the primary immune defense in the CNS, removing debris and dead cells.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="part2">
+        <h2>Part 2: Nerve Conduction and Synapse</h2>
+        
+        <div class="flow-container">
+            <div class="flow-step">
+                <div class="flow-step-title">Synaptic Transmission</div>
+                <p>The process by which a nerve impulse (action potential) is passed from one neuron to the next (or to an effector cell like a muscle) across a synapse.</p>
+            </div>
+            <div class="flow-step">
+                <div class="flow-step-title">Presynaptic Neuron</div>
+                <p>The neuron that sends the signal, releasing neurotransmitters from its axon terminal.</p>
+            </div>
+            <div class="flow-step">
+                <div class="flow-step-title">Postsynaptic Neuron</div>
+                <p>The neuron that receives the signal, possessing receptor sites for the neurotransmitters on its dendrite or cell body.</p>
+            </div>
+            <div class="flow-step">
+                <div class="flow-step-title">Synaptic Vesicles</div>
+                <p>Contain <strong>Neurotransmitters</strong> (e.g., Acetylcholine, Dopamine, Glutamate). These are chemical messengers that diffuse across the synaptic cleft to transmit the signal.</p>
+            </div>
+        </div>
+        
+        <dl>
+            <dt>What should be the reason for a nerve impulse to be conducted?</dt>
+            <dd>For a nerve impulse to be generated and conducted, the stimulus must be strong enough to reach the <strong>threshold potential</strong>. This is the minimum level of depolarization required to open voltage-gated sodium channels and trigger an all-or-none action potential.</dd>
+            
+            <dt>Depolarization</dt>
+            <dd>The phase where the inside of the neuron becomes less negative (more positive) compared to the outside. This occurs due to the rapid influx of <strong>Sodium (Na⁺) ions</strong> into the axon.</dd>
+            
+            <dt>Repolarization</dt>
+            <dd>The phase where the membrane potential returns to its resting negative value after depolarization. This occurs due to the efflux of <strong>Potassium (K⁺) ions</strong> out of the axon.</dd>
+            
+            <dt>Saltatory Conduction</dt>
+            <dd>Saltatory conduction is the mode of nerve impulse conduction in <strong>myelinated axons</strong>. The impulse "jumps" from one Node of Ranvier (gaps in the myelin sheath) to the next. This is much faster and more energy-efficient than conduction in unmyelinated axons.</dd>
+        </dl>
+    </section>
+    
+    <section id="part3">
+        <h2>Part 3: The Human Brain</h2>
+        
+        <h3>Structure of the Human Brain</h3>
+        <div class="brain-container">
+            <div class="brain-section">
+                <h4>Forebrain</h4>
+                <ul>
+                    <li><strong>Cerebrum:</strong> Responsible for higher functions like thought, memory, reasoning, and voluntary actions. Its surface is the cerebral cortex.</li>
+                    <li><strong>Thalamus:</strong> Relays sensory and motor signals to the cortex.</li>
+                    <li><strong>Hypothalamus:</strong> Regulates body temperature, hunger, thirst, and the pituitary gland.</li>
+                </ul>
+            </div>
+            <div class="brain-section">
+                <h4>Midbrain</h4>
+                <ul>
+                    <li>Connects the forebrain and hindbrain</li>
+                    <li>Involved in vision, hearing, and motor control</li>
+                </ul>
+            </div>
+            <div class="brain-section">
+                <h4>Hindbrain</h4>
+                <ul>
+                    <li><strong>Cerebellum:</strong> Coordinates voluntary movement, posture, and balance.</li>
+                    <li><strong>Pons:</strong> Relays signals and is involved in sleep and respiration.</li>
+                    <li><strong>Medulla Oblongata:</strong> Controls vital involuntary functions like breathing, heart rate, and blood pressure.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h3>Lobes of the Cerebrum</h3>
+        <div class="brain-container">
+            <div class="brain-section">
+                <h4>Frontal Lobe</h4>
+                <p>Associated with reasoning, planning, parts of speech, movement, emotions, and problem-solving.</p>
+            </div>
+            <div class="brain-section">
+                <h4>Parietal Lobe</h4>
+                <p>Processes sensory information like touch, temperature, and pain (somatosensory cortex).</p>
+            </div>
+            <div class="brain-section">
+                <h4>Temporal Lobe</h4>
+                <p>Involved in auditory perception (hearing) and memory.</p>
+            </div>
+            <div class="brain-section">
+                <h4>Occipital Lobe</h4>
+                <p>The primary visual processing center of the brain.</p>
+            </div>
+        </div>
+        
+        <h3>Cranial Nerves</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Name</th>
+                    <th>Function</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>I</strong></td>
+                    <td><strong>Olfactory</strong></td>
+                    <td>Smell</td>
+                </tr>
+                <tr>
+                    <td><strong>V</strong></td>
+                    <td><strong>Trigeminal</strong></td>
+                    <td>Facial sensation and chewing</td>
+                </tr>
+                <tr>
+                    <td><strong>VI</strong></td>
+                    <td><strong>Abducens</strong></td>
+                    <td>Eye movement</td>
+                </tr>
+                <tr>
+                    <td><strong>IX</strong></td>
+                    <td><strong>Glossopharyngeal</strong></td>
+                    <td>Taste, swallowing</td>
+                </tr>
+                <tr>
+                    <td><strong>X</strong></td>
+                    <td><strong>Vagus</strong></td>
+                    <td>Parasympathetic control of heart, digestion, etc.</td>
+                </tr>
+                <tr>
+                    <td><strong>XII</strong></td>
+                    <td><strong>Hypoglossal</strong></td>
+                    <td>Tongue movement</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="part4">
+        <h2>Part 4: Nervous Disorders & Other Systems</h2>
+        
+        <h3>Nervous Disorders</h3>
+        <dl>
+            <dt>Parkinson's Disease</dt>
+            <dd>A progressive neurodegenerative disorder caused by the loss of dopamine-producing neurons in the substantia nigra (part of the midbrain). <strong>Symptoms</strong> include tremors, muscle rigidity, slowness of movement (bradykinesia), and impaired balance.</dd>
+            
+            <dt>Alzheimer's Disease</dt>
+            <dd>A progressive neurodegenerative disorder and the most common cause of dementia. It is characterized by the accumulation of amyloid plaques and neurofibrillary tangles in the brain. <strong>Symptoms</strong> include memory loss, confusion, disorientation, and changes in personality.</dd>
+        </dl>
+        
+        <h3>Autonomic Nervous System</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Organ / Function</th>
+                    <th>Sympathetic (Fight or Flight)</th>
+                    <th>Parasympathetic (Rest and Digest)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Blood Pressure</td>
+                    <td>Increases</td>
+                    <td>Decreases</td>
+                </tr>
+                <tr>
+                    <td>Blood Vessels</td>
+                    <td>Constricts (in many areas)</td>
+                    <td>Dilates (minimal effect)</td>
+                </tr>
+                <tr>
+                    <td>Pupil of Eye</td>
+                    <td>Dilates</td>
+                    <td>Constricts</td>
+                </tr>
+                <tr>
+                    <td>Gastrointestinal Movements</td>
+                    <td>Inhibits</td>
+                    <td>Stimulates</td>
+                </tr>
+                <tr>
+                    <td>Bronchi (Airways)</td>
+                    <td>Dilates</td>
+                    <td>Constricts</td>
+                </tr>
+                <tr>
+                    <td>Bile Secretion</td>
+                    <td>Inhibits</td>
+                    <td>Stimulates</td>
+                </tr>
+                <tr>
+                    <td>Secretion of Adrenaline & Noradrenaline</td>
+                    <td>Stimulates</td>
+                    <td>Inhibits</td>
+                </tr>
+                <tr>
+                    <td>Heartbeat</td>
+                    <td>Increases</td>
+                    <td>Decreases</td>
+                </tr>
+                <tr>
+                    <td>Pre-ganglionic Nerve Fibre</td>
+                    <td>Short</td>
+                    <td>Long</td>
+                </tr>
+                <tr>
+                    <td>Post-ganglionic Nerve Fibre</td>
+                    <td>Long</td>
+                    <td>Short</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="part5">
+        <h2>Part 5: Brain Areas and Endocrinology</h2>
+        
+        <h3>Brain Areas</h3>
+        <dl>
+            <dt>Association Area</dt>
+            <dd>Regions of the cerebral cortex that integrate and process information from the primary sensory and motor areas. They are involved in complex functions like learning, memory, and thought.</dd>
+            
+            <dt>Broca's Area</dt>
+            <dd>Located in the frontal lobe (usually left hemisphere), it is responsible for speech production. Damage results in Broca's aphasia (difficulty speaking but can understand language).</dd>
+            
+            <dt>Wernicke's Area</dt>
+            <dd>Located in the temporal lobe (usually left hemisphere), it is responsible for language comprehension. Damage results in Wernicke's aphasia (fluent but nonsensical speech and poor comprehension).</dd>
+        </dl>
+        
+        <h3>Hormones</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Functions</th>
+                    <th>Hormone</th>
+                    <th>Glands</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1) Helps in relaxing pelvic ligaments to facilitate easy birth.</td>
+                    <td><strong>Relaxin</strong></td>
+                    <td><strong>Ovary</strong></td>
+                </tr>
+                <tr>
+                    <td>2) Growth of thyroid gland and secretion of thyroxine hormone.</td>
+                    <td><strong>TSH</strong> (Thyroid Stimulating Hormone)</td>
+                    <td><strong>Pituitary</strong> (Anterior)</td>
+                </tr>
+                <tr>
+                    <td>3) Controls calcium level in the blood.</td>
+                    <td><strong>Calcitonin</strong> and <strong>Parathormone (PTH)</strong></td>
+                    <td><strong>Thyroid</strong> (Calcitonin), <strong>Parathyroid</strong> (PTH)</td>
+                </tr>
+                <tr>
+                    <td>4) Controls tubular absorption of water in kidney.</td>
+                    <td><strong>ADH</strong> (Antidiuretic Hormone/Vasopressin)</td>
+                    <td><strong>Hypothalamus</strong> (produced), <strong>Pituitary</strong> (stored & released)</td>
+                </tr>
+                <tr>
+                    <td>5) Secretion of growth hormone.</td>
+                    <td><strong>GHRH</strong> (Growth Hormone-Releasing Hormone)</td>
+                    <td><strong>Hypothalamus</strong></td>
+                </tr>
+                <tr>
+                    <td>6) Development of immune system and maturation of T-lymphocyte.</td>
+                    <td><strong>Thymosin</strong></td>
+                    <td><strong>Thymus</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="part6">
+        <h2>Part 6: Short Answer Questions</h2>
+        
+        <div class="short-answers">
+            <div class="short-answer">
+                <h4>Largest part of the brain</h4>
+                <p><strong>Cerebrum</strong></p>
+            </div>
+            <div class="short-answer">
+                <h4>Three structures that form the limbic system</h4>
+                <p><strong>Hypothalamus, Amygdala, and Hippocampus</strong>. (The thalamus is sometimes included as part of the limbic system).</p>
+            </div>
+            <div class="short-answer">
+                <h4>Name the parts of the adenohypophysis</h4>
+                <p>The adenohypophysis (anterior pituitary) includes the <strong>pars distalis, pars intermedia, and pars tuberalis</strong>.</p>
+            </div>
+            <div class="short-answer">
+                <h4>The fluid in the eye between the lens and cornea</h4>
+                <p><strong>Aqueous Humor</strong></p>
+            </div>
+            <div class="short-answer">
+                <h4>The receptor that is sensitive to mechanical stimuli like touch and pain</h4>
+                <p><strong>Mechanoreceptor</strong> (for touch/pressure). (<em>Note: Pain is detected by <strong>Nociceptors</strong></em>).</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
