@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <title>BIT's Notes Portal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root {
   --bg-main: #f6f9fc;
@@ -17,183 +18,321 @@
   --btn-hover: #003367;
   --border-main: #d8e6f8;
   --text-main: #1d2735;
+  --success: #07710b;
+  --highlight: #ee0af6;
+  --transition: all 0.3s ease;
 }
+
 body {
   background: var(--bg-main);
   font-family: 'Inter', Arial, sans-serif;
   margin: 0;
   color: var(--text-main);
 }
+
 .header {
   background: var(--header-bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 32px 18px 32px;
+  padding: 20px 32px;
   border-radius: 0 0 18px 18px;
-  box-shadow: 0 2px 8px rgba(70,100,180,0.10);
-  position: sticky; top: 0; z-index: 2;
+  box-shadow: 0 4px 12px rgba(70,100,180,0.12);
+  position: sticky; 
+  top: 0; 
+  z-index: 100;
 }
+
 .logo {
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
 #theme-toggle {
-  font-size: 1.06em;
-  padding: 8px 13px;
-  border-radius: 5px;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border-radius: 8px;
   border: none;
   background: var(--btn-bg);
   color: #fff;
   cursor: pointer;
-  transition: background 0.20s;
+  transition: var(--transition);
+  font-weight: 600;
 }
-#theme-toggle:hover { background: var(--btn-hover); }
+
+#theme-toggle:hover {
+  background: var(--btn-hover);
+  transform: translateY(-2px);
+}
+
 .main {
-  max-width: 1040px;
-  margin: 38px auto 0 auto;
-  padding: 0 12px 42px 12px;
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding: 0 20px 50px 20px;
 }
+
 .hero {
   margin-top: 20px;
-  background: linear-gradient(95deg, #eaf3ff 0%, #f6f9fc 100%);
-  border-radius: 16px;
-  padding: 36px 20px 27px 20px;
+  background: linear-gradient(135deg, #eaf3ff 0%, #f6f9fc 100%);
+  border-radius: 20px;
+  padding: 40px 30px;
   text-align: center;
-  box-shadow: 0 3px 18px #dbe6fa3c;
+  box-shadow: 0 8px 25px #dbe6fa3c;
+  position: relative;
+  overflow: hidden;
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--highlight));
+}
+
 .hero h2 {
-  margin: 0 0 12px 0;
-  font-size: 2em;
-  color: var(--accent);
-  font-weight: 700;
+  margin: 0 0 15px 0;
+  font-size: 2.2rem;
+  color: var(--success);
+  font-weight: 800;
 }
+
 .hero p {
-  font-size: 1.18em;
+  font-size: 1.2rem;
   color: #2c3e59;
-  margin: 10px auto 0 auto;
-  max-width: 690px;
+  margin: 15px auto 0 auto;
+  max-width: 700px;
+  line-height: 1.6;
 }
+
 .notes-section {
-  margin-top: 38px;
+  margin-top: 45px;
 }
+
+.section-title {
+  color: var(--highlight);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
 .notes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
-  gap: 28px;
-  margin-top: 23px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 25px;
 }
+
 .subject-card {
   background: var(--note-bg);
-  border-radius: 13px;
+  border-radius: 16px;
   border: 1.6px solid var(--border-main);
-  box-shadow: 0 2px 12px #e0e9f788;
-  padding: 21px 19px 15px 19px;
-  transition: box-shadow 0.2s,transform 0.13s, background 0.22s;
-  min-height: 15px;
+  box-shadow: 0 4px 15px #e0e9f788;
+  padding: 25px 22px 20px 22px;
+  transition: var(--transition);
+  min-height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
+
+.subject-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleY(0);
+  transition: var(--transition);
+}
+
 .subject-card:hover {
-  box-shadow: 0 8px 30px #a6d6ff42;
+  box-shadow: 0 10px 30px #a6d6ff42;
   background: var(--card-hover-bg);
-  transform: translateY(-2px) scale(1.012);
+  transform: translateY(-5px);
 }
+
+.subject-card:hover::before {
+  transform: scaleY(1);
+}
+
 .subject-title {
-  font-size: 1.23em;
+  font-size: 1.3rem;
   color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 0.6px;
-  margin-bottom: 7px;
-}
-.note-card {
-  background: var(--note-bg);
-  border-radius: 13px;
-  border: 1.6px solid var(--border-main);
-  box-shadow: 0 2px 12px #e0e9f788;
-  padding: 21px 19px 15px 19px;
-  transition: box-shadow 0.2s,transform 0.13s, background 0.22s;
-  min-height: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  display: none;
+  align-items: center;
+  gap: 10px;
 }
-.note-card.active {
-  display: flex;
+
+.subject-icon {
+  font-size: 1.5rem;
 }
-.note-card:hover {
-  box-shadow: 0 8px 30px #a6d6ff42;
-  background: var(--card-hover-bg);
-  transform: translateY(-2px) scale(1.012);
+
+.subject-desc {
+  color: #5a6c8d;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
 }
-.note-title {
-  font-size: 1.23em;
-  color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 0.6px;
-  margin-bottom: 7px;
-}
+
 .note-actions {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-top: auto;
 }
+
 .note-link, .note-download {
   text-decoration: none;
   background: var(--accent2);
   color: var(--accent);
-  font-size: 1em;
-  padding: 7px 14px;
-  border-radius: 5px;
-  transition: background 0.18s;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: var(--transition);
   border: none;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
+
 .note-link:hover, .note-download:hover {
   background: var(--accent);
   color: #fff;
+  transform: translateY(-2px);
 }
-.link-edit {
-  position: absolute;
-  top: 13px;
-  right: 12px;
-  font-size: 0.92em;
-  background: #eaf17b;
-  color: #745400;
-  border-radius: 4px;
-  padding: 3px 10px;
-  cursor: pointer;
-  border: none;
+
+.subject-notes {
   display: none;
+  animation: fadeIn 0.4s ease;
 }
-.note-card[data-owner="bit"]:hover .link-edit {
-  display: inline-block;
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
 .back-btn {
   background: var(--accent2);
   color: var(--accent);
   border: none;
-  padding: 8px 16px;
-  border-radius: 5px;
+  padding: 12px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: 500;
-  margin-bottom: 15px;
-  display: inline-block;
-  transition: background 0.18s;
+  font-weight: 600;
+  margin-bottom: 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
 }
+
 .back-btn:hover {
   background: var(--accent);
   color: #fff;
+  transform: translateX(-3px);
 }
-@media (max-width:700px) {
-  .main {padding:0 1vw;}
-  .hero h2 {font-size:1.18em;}
+
+.note-card {
+  background: var(--note-bg);
+  border-radius: 16px;
+  border: 1.6px solid var(--border-main);
+  box-shadow: 0 4px 15px #e0e9f788;
+  padding: 25px 22px 20px 22px;
+  transition: var(--transition);
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
 }
+
+.note-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleY(0);
+  transition: var(--transition);
+}
+
+.note-card:hover {
+  box-shadow: 0 10px 30px #a6d6ff42;
+  background: var(--card-hover-bg);
+  transform: translateY(-5px);
+}
+
+.note-card:hover::before {
+  transform: scaleY(1);
+}
+
+.note-title {
+  font-size: 1.25rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.link-edit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 0.9rem;
+  background: #eaf17b;
+  color: #745400;
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+  border: none;
+  display: none;
+  transition: var(--transition);
+}
+
+.note-card[data-owner="bit"]:hover .link-edit {
+  display: inline-block;
+}
+
+.link-edit:hover {
+  background: #e0e85a;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 0 15px 30px 15px;
+  }
+  
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+  
+  .header {
+    padding: 15px 20px;
+  }
+}
+
 body.dark {
   --bg-main: #11141e;
   --header-bg: #232a3c;
@@ -203,19 +342,38 @@ body.dark {
   --text-main: #f1f7fa;
   --border-main: #393e4b;
 }
-::-webkit-scrollbar {width:11px; background:#caddf9;}
-::-webkit-scrollbar-thumb {background:#b9d3f2; border-radius:20px;}
-body.dark ::-webkit-scrollbar-thumb {background:#313d59;}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #caddf9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b9d3f2;
+  border-radius: 10px;
+}
+
+body.dark ::-webkit-scrollbar {
+  background: #1a2235;
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+  background: #313d59;
+}
+
 .iedit {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
 }
 </style>
 </head>
 <body>
 <header class="header">
-  <div class="logo"><img class="iedit" src="image12.jpg" alt="BIT"></div>
+  <div class="logo">
+    <img class="iedit" src="image12.jpg" alt="BIT">
+  </div>
   <button id="theme-toggle">🌙 Dark Mode</button>
 </header>
 
@@ -225,11 +383,19 @@ body.dark ::-webkit-scrollbar-thumb {background:#313d59;}
   </section>
   
   <section class="notes-section">
-    <h3 style="color:#ee0af6;margin-bottom:19px;">Subjects</h3>
+    <h3 class="section-title">Subjects</h3>
     <div class="notes-grid" id="subjects-list">
       <!-- Physics Subject Card -->
       <div class="subject-card" data-subject="physics">
-        <div class="subject-title"><strong>Physics</strong></div>
+        <div>
+          <div class="subject-title">
+            <i class="fas fa-atom subject-icon"></i>
+            <span>Physics</span>
+          </div>
+          <div class="subject-desc">
+            Master the fundamentals of matter, energy, and the laws governing the universe.
+          </div>
+        </div>
         <div class="note-actions">
           <span class="note-link">View Notes</span>
         </div>
@@ -237,7 +403,15 @@ body.dark ::-webkit-scrollbar-thumb {background:#313d59;}
       
       <!-- Chemistry Subject Card -->
       <div class="subject-card" data-subject="chemistry">
-        <div class="subject-title"><strong>Chemistry</strong></div>
+        <div>
+          <div class="subject-title">
+            <i class="fas fa-flask subject-icon"></i>
+            <span>Chemistry</span>
+          </div>
+          <div class="subject-desc">
+            Explore elements, compounds, reactions, and the properties of substances.
+          </div>
+        </div>
         <div class="note-actions">
           <span class="note-link">View Notes</span>
         </div>
@@ -245,54 +419,65 @@ body.dark ::-webkit-scrollbar-thumb {background:#313d59;}
 
       <!-- Biology Subject Card -->
       <div class="subject-card" data-subject="biology">
-        <div class="subject-title"><strong>Biology</strong></div>
+        <div>
+          <div class="subject-title">
+            <i class="fas fa-dna subject-icon"></i>
+            <span>Biology</span>
+          </div>
+          <div class="subject-desc">
+            Discover the science of life and living organisms, from cells to ecosystems.
+          </div>
+        </div>
         <div class="note-actions">
           <span class="note-link">View Notes</span>
         </div>
       </div>
     </div>
 
-    <!-- Physics Notes (Hidden by default) -->
-    <div id="physics-notes" style="display: none;">
+    <!-- Physics Notes -->
+    <div id="physics-notes" class="subject-notes">
       <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
+      <h3 class="section-title">Physics Notes</h3>
       <div class="notes-grid">
-        <!-- Wave Optics Note Card -->
         <div class="note-card active" data-owner="bit">
           <div class="note-title"><strong>Wave Optics Notes</strong></div>
           <div class="note-actions">
             <a class="note-link" href="Waveoptics.html" target="_blank">View</a>
             <a class="note-download" href="Waveoptics.html" download>Download</a>
           </div>
+          <button class="link-edit">Edit</button>
         </div>
       </div>
     </div>
 
-    <!-- Chemistry Notes (Hidden by default) -->
-    <div id="chemistry-notes" style="display: none;">
+    <!-- Chemistry Notes -->
+    <div id="chemistry-notes" class="subject-notes">
       <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
+      <h3 class="section-title">Chemistry Notes</h3>
       <div class="notes-grid">
-        <!-- Chapter 7 Note Card -->
         <div class="note-card active" data-owner="bit">
           <div class="note-title"><strong>Chapter 7</strong> - Group 16, 17 &amp; 18 Elements – Chemistry Revision</div>
           <div class="note-actions">
             <a class="note-link" href="chemlesson7.html" target="_blank">View</a>
             <a class="note-download" href="chemlesson7.html" download>Download</a>
           </div>
+          <button class="link-edit">Edit</button>
         </div>
       </div>
     </div>
 
-    <!-- Biology Notes (Hidden by default) -->
-    <div id="biology-notes" style="display: none;">
+    <!-- Biology Notes -->
+    <div id="biology-notes" class="subject-notes">
       <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
+      <h3 class="section-title">Biology Notes</h3>
       <div class="notes-grid">
-        <!-- Dummy Biology Note Card - You can edit this later -->
         <div class="note-card active" data-owner="bit">
           <div class="note-title"><strong>Biology Chapter 9</strong> - Control and Coordination</div>
           <div class="note-actions">
             <a class="note-link" href="Lesson9.html" target="_blank">View</a>
             <a class="note-download" href="Lesson9.html" download>Download</a>
           </div>
+          <button class="link-edit">Edit</button>
         </div>
       </div>
     </div>
@@ -303,8 +488,7 @@ body.dark ::-webkit-scrollbar-thumb {background:#313d59;}
 const btn = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Theme toggle functionality
-if(localStorage.getItem('theme')==='dark') {
+if(localStorage.getItem('theme') === 'dark') {
   body.classList.add('dark');
   btn.textContent = '☀️ Light Mode';
 }
@@ -320,7 +504,6 @@ btn.onclick = function() {
   }
 };
 
-// Subject navigation functionality
 document.querySelectorAll('.subject-card').forEach(card => {
   card.addEventListener('click', function() {
     const subject = this.getAttribute('data-subject');
@@ -329,29 +512,18 @@ document.querySelectorAll('.subject-card').forEach(card => {
 });
 
 function showSubjectNotes(subject) {
-  // Hide subjects list
   document.getElementById('subjects-list').style.display = 'none';
-  document.querySelector('h3').textContent = subject.charAt(0).toUpperCase() + subject.slice(1) + ' Notes';
-  
-  // Show the selected subject's notes
+  document.querySelector('.section-title').textContent = subject.charAt(0).toUpperCase() + subject.slice(1) + ' Notes';
   document.getElementById(subject + '-notes').style.display = 'block';
 }
 
 function showSubjects() {
-  // Show subjects list
   document.getElementById('subjects-list').style.display = 'grid';
-  document.querySelector('h3').textContent = 'Subjects';
-  
-  // Hide all subject notes
+  document.querySelector('.section-title').textContent = 'Subjects';
   document.getElementById('physics-notes').style.display = 'none';
   document.getElementById('chemistry-notes').style.display = 'none';
   document.getElementById('biology-notes').style.display = 'none';
 }
 </script>
 </body>
-    <footer style="text-align: center; padding: 16px; background-color: #eeeeee; margin-top: 40px; font-size: 14px; color: #555;">
-  &copy; 2025 BIT All rights reserved.
-</footer>
 </html>
-
-
