@@ -82,6 +82,32 @@ body {
   gap: 28px;
   margin-top: 23px;
 }
+.subject-card {
+  background: var(--note-bg);
+  border-radius: 13px;
+  border: 1.6px solid var(--border-main);
+  box-shadow: 0 2px 12px #e0e9f788;
+  padding: 21px 19px 15px 19px;
+  transition: box-shadow 0.2s,transform 0.13s, background 0.22s;
+  min-height: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+.subject-card:hover {
+  box-shadow: 0 8px 30px #a6d6ff42;
+  background: var(--card-hover-bg);
+  transform: translateY(-2px) scale(1.012);
+}
+.subject-title {
+  font-size: 1.23em;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  margin-bottom: 7px;
+}
 .note-card {
   background: var(--note-bg);
   border-radius: 13px;
@@ -94,6 +120,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  display: none;
+}
+.note-card.active {
+  display: flex;
 }
 .note-card:hover {
   box-shadow: 0 8px 30px #a6d6ff42;
@@ -107,7 +137,6 @@ body {
   letter-spacing: 0.6px;
   margin-bottom: 7px;
 }
-
 .note-actions {
   display: flex;
   gap: 10px;
@@ -145,6 +174,22 @@ body {
 .note-card[data-owner="bit"]:hover .link-edit {
   display: inline-block;
 }
+.back-btn {
+  background: var(--accent2);
+  color: var(--accent);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: inline-block;
+  transition: background 0.18s;
+}
+.back-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
 @media (max-width:700px) {
   .main {padding:0 1vw;}
   .hero h2 {font-size:1.18em;}
@@ -178,37 +223,92 @@ body.dark ::-webkit-scrollbar-thumb {background:#313d59;}
   <section class="hero">
     <h2 style="color: #07710b;">You are on the very right place for <i><strong>REVISION</strong></i></h2>
   </section>
-<section class="notes-section">
-  <h3 style="color:#ee0af6;margin-bottom:19px;">Latest Notes</h3>
-  <div class="notes-grid" id="notes-list">
-    <!-- Note Card for Group 16, 17, 18 Elements -->
-    <div class="note-card" data-owner="bit">
-      <div class="note-title"><strong>Chapter 7</strong> - Group 16, 17 &amp; 18 Elements – Chemistry Revision</div>
-      <div class="note-actions">
-        <a class="note-link" href="chemlesson7.html" target="_blank">View</a>
-        <a class="note-download" href="chemlesson7.html" download>Download</a>
+  
+  <section class="notes-section">
+    <h3 style="color:#ee0af6;margin-bottom:19px;">Subjects</h3>
+    <div class="notes-grid" id="subjects-list">
+      <!-- Physics Subject Card -->
+      <div class="subject-card" data-subject="physics">
+        <div class="subject-title"><strong>Physics</strong></div>
+        <div class="note-actions">
+          <span class="note-link">View Notes</span>
+        </div>
       </div>
-    </div>
-    <!-- Note Card for Wave Optics Notes -->
-    <div class="note-card" data-owner="bit">
-      <div class="note-title"><strong>Wave Optics Notes</strong></div>
-      <div class="note-actions">
-        <a class="note-link" href="Waveoptics.html" target="_blank">View</a>
-        <a class="note-download" href="Waveoptics.html" download>Download</a>
+      
+      <!-- Chemistry Subject Card -->
+      <div class="subject-card" data-subject="chemistry">
+        <div class="subject-title"><strong>Chemistry</strong></div>
+        <div class="note-actions">
+          <span class="note-link">View Notes</span>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-</main>
 
+      <!-- Biology Subject Card -->
+      <div class="subject-card" data-subject="biology">
+        <div class="subject-title"><strong>Biology</strong></div>
+        <div class="note-actions">
+          <span class="note-link">View Notes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Physics Notes (Hidden by default) -->
+    <div id="physics-notes" style="display: none;">
+      <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
+      <div class="notes-grid">
+        <!-- Wave Optics Note Card -->
+        <div class="note-card active" data-owner="bit">
+          <div class="note-title"><strong>Wave Optics Notes</strong></div>
+          <div class="note-actions">
+            <a class="note-link" href="Waveoptics.html" target="_blank">View</a>
+            <a class="note-download" href="Waveoptics.html" download>Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chemistry Notes (Hidden by default) -->
+    <div id="chemistry-notes" style="display: none;">
+      <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
+      <div class="notes-grid">
+        <!-- Chapter 7 Note Card -->
+        <div class="note-card active" data-owner="bit">
+          <div class="note-title"><strong>Chapter 7</strong> - Group 16, 17 &amp; 18 Elements – Chemistry Revision</div>
+          <div class="note-actions">
+            <a class="note-link" href="chemlesson7.html" target="_blank">View</a>
+            <a class="note-download" href="chemlesson7.html" download>Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Biology Notes (Hidden by default) -->
+    <div id="biology-notes" style="display: none;">
+      <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
+      <div class="notes-grid">
+        <!-- Dummy Biology Note Card - You can edit this later -->
+        <div class="note-card active" data-owner="bit">
+          <div class="note-title"><strong>Biology Chapter 1</strong> - Sample Biology Notes</div>
+          <div class="note-actions">
+            <a class="note-link" href="#" target="_blank">View</a>
+            <a class="note-download" href="#" download>Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <script>
 const btn = document.getElementById('theme-toggle');
 const body = document.body;
+
+// Theme toggle functionality
 if(localStorage.getItem('theme')==='dark') {
   body.classList.add('dark');
   btn.textContent = '☀️ Light Mode';
 }
+
 btn.onclick = function() {
   body.classList.toggle('dark');
   if(body.classList.contains('dark')) {
@@ -219,13 +319,34 @@ btn.onclick = function() {
     localStorage.setItem('theme','light');
   }
 };
+
+// Subject navigation functionality
+document.querySelectorAll('.subject-card').forEach(card => {
+  card.addEventListener('click', function() {
+    const subject = this.getAttribute('data-subject');
+    showSubjectNotes(subject);
+  });
+});
+
+function showSubjectNotes(subject) {
+  // Hide subjects list
+  document.getElementById('subjects-list').style.display = 'none';
+  document.querySelector('h3').textContent = subject.charAt(0).toUpperCase() + subject.slice(1) + ' Notes';
+  
+  // Show the selected subject's notes
+  document.getElementById(subject + '-notes').style.display = 'block';
+}
+
+function showSubjects() {
+  // Show subjects list
+  document.getElementById('subjects-list').style.display = 'grid';
+  document.querySelector('h3').textContent = 'Subjects';
+  
+  // Hide all subject notes
+  document.getElementById('physics-notes').style.display = 'none';
+  document.getElementById('chemistry-notes').style.display = 'none';
+  document.getElementById('biology-notes').style.display = 'none';
+}
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
