@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>BIT's Notes Portal</title>
+<title>BIT's Notes Portal - Study Materials & Revision Notes</title>
+<meta name="description" content="Access comprehensive study materials and revision notes for Physics, Chemistry, and Biology. Download educational resources for effective exam preparation.">
+<meta name="keywords" content="study notes, revision materials, physics notes, chemistry notes, biology notes, educational resources, exam preparation">
+<meta name="author" content="BIT">
+<link rel="canonical" href="https://prolbsk.github.io/Bit-s-study-notes-12th/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" href="image12.jpg" type="image/jpeg">
 <style>
 :root {
   --bg-main: #f6f9fc;
@@ -94,7 +99,7 @@ body {
   background: linear-gradient(90deg, var(--accent), var(--highlight));
 }
 
-.hero h2 {
+.hero h1 {
   margin: 0 0 15px 0;
   font-size: 2.2rem;
   color: var(--success);
@@ -301,7 +306,7 @@ body {
     gap: 20px;
   }
   
-  .hero h2 {
+  .hero h1 {
     font-size: 1.8rem;
   }
   
@@ -349,18 +354,19 @@ body.dark ::-webkit-scrollbar-thumb {
 <body>
 <header class="header">
   <div class="logo">
-    <img class="iedit" src="image12.jpg" alt="BIT">
+    <img class="iedit" src="image12.jpg" alt="BIT Educational Portal - Study Notes and Materials" width="45" height="45">
   </div>
   <button id="theme-toggle">🌙 Dark Mode</button>
 </header>
 
 <main class="main">
   <section class="hero">
-    <h2 style="color: #07710b;">You are on the very right place for <i><strong>REVISION</strong></i></h2>
+    <h1>You are on the very right place for <i><strong>REVISION</strong></i></h1>
+    <p>Access all your study materials in one place. Organized, searchable, and always available when you need them.</p>
   </section>
   
   <section class="notes-section">
-    <h3 class="section-title">Subjects</h3>
+    <h2 class="section-title">Subjects</h2>
     <div class="notes-grid" id="subjects-list">
       <!-- Physics Subject Card -->
       <div class="subject-card" data-subject="physics">
@@ -414,7 +420,7 @@ body.dark ::-webkit-scrollbar-thumb {
     <!-- Physics Notes -->
     <div id="physics-notes" class="subject-notes">
       <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
-      <h3 class="section-title">Physics Notes</h3>
+      <h2 class="section-title">Physics Notes</h2>
       <div class="notes-grid">
         <div class="note-card active" data-owner="bit">
           <div class="note-title"><strong>Wave Optics Notes</strong></div>
@@ -429,7 +435,7 @@ body.dark ::-webkit-scrollbar-thumb {
     <!-- Chemistry Notes -->
     <div id="chemistry-notes" class="subject-notes">
       <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
-      <h3 class="section-title">Chemistry Notes</h3>
+      <h2 class="section-title">Chemistry Notes</h2>
       <div class="notes-grid">
         <div class="note-card active" data-owner="bit">
           <div class="note-title"><strong>Chapter 7</strong> - Group 16, 17 &amp; 18 Elements – Chemistry Revision</div>
@@ -444,7 +450,7 @@ body.dark ::-webkit-scrollbar-thumb {
     <!-- Biology Notes -->
     <div id="biology-notes" class="subject-notes">
       <button class="back-btn" onclick="showSubjects()">← Back to Subjects</button>
-      <h3 class="section-title">Biology Notes</h3>
+      <h2 class="section-title">Biology Notes</h2>
       <div class="notes-grid">
         <div class="note-card active" data-owner="bit">
           <div class="note-title"><strong>Biology Chapter 9</strong> - Control and Coordination</div>
@@ -499,9 +505,54 @@ function showSubjects() {
   document.getElementById('biology-notes').style.display = 'none';
 }
 </script>
-</body>
-    <footer style="text-align: center; padding: 16px; background-color: #eeeeee; margin-top: 40px; font-size: 14px; color: #555;">
-  &copy; 2025 BIT All rights reserved.
-</footer>
-</html>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "BIT's Notes Portal",
+  "description": "Educational portal providing study materials and revision notes for Physics, Chemistry, and Biology",
+  "url": "https://prolbsk.github.io/Bit-s-study-notes-12th/",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "BIT"
+  },
+  "about": {
+    "@type": "CreativeWork",
+    "name": "Educational Notes and Study Materials"
+  },
+  "educationalAlignment": [
+    {
+      "@type": "AlignmentObject",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "Science Curriculum",
+      "targetName": "Physics"
+    },
+    {
+      "@type": "AlignmentObject",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "Science Curriculum",
+      "targetName": "Chemistry"
+    },
+    {
+      "@type": "AlignmentObject",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "Science Curriculum",
+      "targetName": "Biology"
+    }
+  ]
+}
+</script>
+<footer style="text-align: center; padding: 16px; background-color: #eeeeee; margin-top: 40px; font-size: 14px; color: #555;">
+  © 2025 BIT All rights reserved.
+</footer>
+</body>
+
+</html>
